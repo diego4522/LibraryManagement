@@ -13,17 +13,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Library Management System: Checkout/Return</title>
+<title>Libreria Web: Prestar/Devolver</title>
 </head>
 <body bgcolor='white'>
 <!-- Page Heading -->
 <table border='1' cellpadding='5' cellspacing='0' width='400'>
 <tr bgcolor='#CCCCFF' align='center' valign='center' height='20'>
-<td><h3>Library Management System:Checkout/Return</h3></td>
+<td><h3>Libreria Web: Prestar/Devolver</h3></td>
 </tr>
 </table>
 <p>
-This form allows you to checkout and return a book.
+Presta o Devuelve Libros.
 </p>
 <%
 
@@ -32,13 +32,13 @@ List<Book> books = (ArrayList<Book>)request.getAttribute("books");
 <form action='CheckOutServletPath' method='POST'>
 <table width='100%' border='1'>
 <thead align='center'>
-<th>Book Id</th>
-<th>Book Name</th>
-<th>Author Name</th>
+<th>Id Libro</th>
+<th>Nombre Libro</th>
+<th>Nombre Autor</th>
 <th>ISBN</th>
-<th>Publisher</th>
-<th>Total Copies</th>
-<th>Available Copies</th>
+<th>Publicado</th>
+<th>Total de Copias</th>
+<th>Copias Disponible</th>
 </thead>
 <%
 for(Book book:books){
@@ -96,9 +96,9 @@ for(Book book:books){
    Date sevenDaysAfterNow = calendar.getTime();
    String sevenDaysAfterNowString = dateFormatter.format(sevenDaysAfterNow);%>
 
-User name:<input type='text' name='username' value="<%=checkout.getUserName()%>"><br/><br/>
+Nombre de Usuario:<input type='text' name='username' value="<%=checkout.getUserName()%>"><br/><br/>
 
-Date of Return:<input type="text" name="dateofreturn" value=<%= sevenDaysAfterNowString %> />
+Fecha de Regreso:<input type="text" name="dateofreturn" value=<%= sevenDaysAfterNowString %> />
 <input type='submit' name='checkout' value='Checkout book'/>
 <input type='submit' name='return' value='Return book'/>
 
@@ -106,6 +106,6 @@ Date of Return:<input type="text" name="dateofreturn" value=<%= sevenDaysAfterNo
 
 </form>
 
-<center>Click <a href="index.jsp">here</a> to log out.</center>
+<center>Click <a href="index.jsp">aca</a> para salir.</center>
 </body>
 </html>

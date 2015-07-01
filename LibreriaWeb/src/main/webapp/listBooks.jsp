@@ -18,17 +18,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Library Management System: List Books</title>
+<title>Libreria Web: Lista de Libros</title>
 </head>
 <body bgcolor='white'>
 <!-- Page Heading -->
 <table border='1' cellpadding='5' cellspacing='0' width='400'>
 <tr bgcolor='#CCCCFF' align='center' valign='center' height='20'>
-<td><h3>Library Management System: List Books</h3></td>
+<td><h3>Libreria Web: Lista de Libros</h3></td>
 </tr>
 </table>
 <p>
-This form allows you to view the list of books.
+Lista de libros.
 </p>
 <%
 
@@ -38,13 +38,13 @@ List<Book> books = (ArrayList<Book>)request.getAttribute("books");
 
 <table width='100%' border='1'>
 <thead align='center'>
-<th>Book Id</th>
-<th>Book Name</th>
-<th>Author Name</th>
+<th>Id Libro</th>
+<th>Nombre Libro</th>
+<th>Nombre Autor</th>
 <th>ISBN</th>
-<th>Publisher</th>
-<th>Total Copies</th>
-<th>Available Copies</th>
+<th>Publicador</th>
+<th>Total de Copias</th>
+<th>Copias Disponibles</th>
 </thead>
 <%
 for(Book book:books){
@@ -67,6 +67,6 @@ for(Book book:books){
 
 <br/><br/>
 
-<center>Click <a href="index.jsp">here</a> to log out.</center>
+<center>Click <a href="index.jsp">aca</a> para salir.</center>
 </body>
 </html>

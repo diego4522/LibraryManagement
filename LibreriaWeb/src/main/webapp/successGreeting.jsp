@@ -12,28 +12,28 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Library Management System: Success Greeting Page</title>
+        <title>Libreria Web: Bienvenido Usuario</title>
     </head>
    
  <body bgcolor='white'>
 <!-- Page Heading -->
 <table border='1' cellpadding='5' cellspacing='0' width='400'>
 <tr bgcolor='#CCCCFF' align='center' valign='center' height='20'>
-<td><h3>Library Management System: Success Greeting Page</h3></td>
+<td><h3>Libreria Web: Bienvenido Usuario</h3></td>
 </tr>
 </table>
 <%	List<CheckOut> checkout = (ArrayList<CheckOut>)request.getAttribute("checkedOutItems");
  %>
 
-<p> You have successfully logged in!!!</p>
+<p> Bienvenido a la Libreria Web</p>
 
-<u>Books currently borrowed by you:</u><br/><br/>	
+<u>Libros Actualmente Prestados:</u><br/><br/>	
 <table width='100%' border='1'>
 <thead align='center'>
-<th>Transaction Id</th>
-<th>User Name</th>
-<th>Book Id</th>
-<th>Return Date</th>
+<th>Id Transaccion</th>
+<th>Nombre Usuario</th>
+<th>Id Libro</th>
+<th>Fecha de Regreso</th>
 </thead>
 <%
 for(CheckOut checkedOutItem: checkout) {
@@ -49,7 +49,7 @@ for(CheckOut checkedOutItem: checkout) {
 %>
 </table>
 <br/><br/><br/><br/>
-<center>Click <a href='index.jsp'>here</a> to logout</center><br/>
+<center>Click <a href="index.jsp">aca</a> para salir.</center>
 
 </body>
 </html>

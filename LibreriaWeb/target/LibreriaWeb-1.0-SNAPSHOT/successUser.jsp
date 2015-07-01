@@ -5,21 +5,21 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Library Management System: Add User Success</title>
+<title>Libreria Web: Ingreso Correcto de Usuario</title>
 </head>
 <body bgcolor='white'>
 <!-- Page Heading -->
 <table border='1' cellpadding='5' cellspacing='0' width='400'>
 <tr bgcolor='#CCCCFF' align='center' valign='center' height='20'>
-<td><h3>Library Management System: Add User Success</h3></td>
+<td><h3>Libreria Web: Ingreso Correcto de Usuario</h3></td>
 </tr>
 </table>
 <%	User user = (User)request.getAttribute("user");
  %>
 <p>
-Your request to add  <i> <%=user.getUsername() %></i>  was successful.
+EL usuario  <i> <%=user.getUsername() %></i>  se iingreso correctamente.
 </p>
-<center>Click <a href="index.jsp">here</a> to log out.</center>
+<center>Click <a href="index.jsp">aca</a> para salir.</center>
 </body>
 </html>
 

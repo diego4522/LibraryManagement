@@ -15,22 +15,22 @@
 <form action="AdminSectionServletPath" method="post">
 <table border='1' cellpadding='5' cellspacing='0' width='400'>
 <tr bgcolor='#CCCCFF' align='center' valign='center' height='20'>
-<td><h3>Welcome to Admin Section Page</h3>
+<td><h3>Bienvenido Administrador</h3>
 </td>
 </table>
 
 <p>
-This is the page for Admin Section.
+Opciones de Administrador.
 
 </p> 
 
-<input type="radio" name="menuselection" value="listbooks">List Books <br>
-<input type="radio" name="menuselection" value="listborrowedbooks">List Borrowed Books<br>
-<input type="radio" name="menuselection" value="listusers">List Users<br>
-<input type="radio" name="menuselection" value="checkoutbook">Checkout/Return Book<br>
+<input type="radio" name="menuselection" value="listbooks">Lista de Libros <br>
+<input type="radio" name="menuselection" value="listborrowedbooks">Lista de Libros Prestados<br>
+<input type="radio" name="menuselection" value="listusers">Lista de Usuarios<br>
+<input type="radio" name="menuselection" value="checkoutbook">Pedir/Regresar un Libro<br>
 <input type="submit" value="Submit">
 <br><br>
-<center>Click <a href="index.jsp">here</a> to log out.</center>
+<center>Click <a href="index.jsp">aca</a> para salir.</center>
 </form> 
 </body>
 </html>

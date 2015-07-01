@@ -11,21 +11,21 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<title>Library Management System: User Details</title>
+<title>Libreria Web: Lista de Usuarios</title>
 </head>
 <body>
-<center><h2><u>Welcome to the User Details Page</u></h2></center>
+<center><h2><u>Libreria Web: Lista de Usuarios</u></h2></center>
 <%
 
 List<User> users = (ArrayList<User>)request.getAttribute("users");
 %>	
 <table width='100%' border='1'>
 <thead align='center'>
-<th>First Name</th>
-<th>Surname</th>
-<th>Age</th>
-<th>Gender</th>
-<th>Username</th>
+<th>Nombre</th>
+<th>Apellido</th>
+<th>Edad</th>
+<th>Genero</th>
+<th>Usuario</th>
 </thead>
 <%
 for(User user:users){
@@ -46,7 +46,7 @@ for(User user:users){
 
 <%
 %>
-<center>Click <a href="adminsection.jsp">here</a> to go back to the admin page.</center>
-<center>Click <a href="index.jsp">here</a> to log out.</center>
+<center>Click <a href="adminsection.jsp">aca</a> para regresar admin page.</center>
+<center>Click <a href="index.jsp">aca</a> para salir.</center>
 </body>
 </html>

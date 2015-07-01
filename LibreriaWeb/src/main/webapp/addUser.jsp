@@ -5,17 +5,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Library Management System: Add a new user</title>
+<title>Libreria Web: Agregar nuevo usuario </title>
 </head>
 <body bgcolor='white'>
 <!-- Page Heading -->
 <table border='1' cellpadding='5' cellspacing='0' width='400'>
-<tr bgcolor='#CCCCFF' align='center' valign='center' height='20'>
-<td><h3>Library Management System: Add a new user</h3></td>
+<tr bgcolor='#CCFFFF' align='center' valign='center' height='20'>
+<td><h3>Libreria Web: Agregar nuevo usuario </h3></td>
 </tr>
 </table>
 <p>
-This form allows you to add a new user.
+Escriba la informacion del nuevo usuario
 </p>
 
 <%
@@ -40,15 +40,15 @@ This form allows you to add a new user.
 
 <form action='AddUsersServletPath' method='POST'>
 
-First Name:<input type='text' name='firstname' value="<%=user.getFirstName()%>"> <br/><br/>
-Surname:<input type='text'name='surname' value="<%=user.getSurname()%>"><br/><br/>
-Age:<input type='text' name='age' value="<%=user.getAge()%>"><br/><br/>
-Gender:<input type='text' name='gender' value="<%=user.getGender() %>"><br/><br/>
-Username:<input type='text' name='username' value="<%=user.getUsername() %>"><br/><br/>
-Password:<input type='password' name='password' value="<%=user.getPassword() %>"><br/><br/>
+Nombre:<input type='text' name='firstname' value="<%=user.getFirstName()%>"> <br/><br/>
+Apellido:<input type='text'name='surname' value="<%=user.getSurname()%>"><br/><br/>
+Edad:<input type='text' name='age' value="<%=user.getAge()%>"><br/><br/>
+Genero:<input type='text' name='gender' value="<%=user.getGender() %>"><br/><br/>
+Usuario:<input type='text' name='username' value="<%=user.getUsername() %>"><br/><br/>
+Contraseña:<input type='password' name='password' value="<%=user.getPassword() %>"><br/><br/>
 
-<input type='submit' value='Add User'/>
+<input type='submit' value='Ingresar Usuario'/>
 </form>
-<center>Click <a href="index.jsp"> here </a>to log out.</center>
+<center>Click <a href="index.jsp"> aca </a>para salir.</center>
 </body>
 </html>

@@ -18,17 +18,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Library Management System: List borrowed books</title>
+<title>Libreria Web: Lista de libros Prestados</title>
 </head>
 <body bgcolor='white'>
 <!-- Page Heading -->
 <table border='1' cellpadding='5' cellspacing='0' width='400'>
 <tr bgcolor='#CCCCFF' align='center' valign='center' height='20'>
-<td><h3>Library Management System: List borrowed books</h3></td>
+<td><h3>Libreria Web: Lista de libros Prestados</h3></td>
 </tr>
 </table>
 <p>
-This form allows you to list borrowed books
+Lista de todos los libros prestados.
 </p>
 <%
 List<CheckOut> checkout = (ArrayList<CheckOut>)request.getAttribute("checkout");
@@ -36,13 +36,13 @@ List<CheckOut> past_returndate = (ArrayList<CheckOut>)request.getAttribute("past
 
 %>	
 <br/><br/>
-List of book issued
+Lista de libros pedidos
 
 <table width='100%' border='1'>
 <thead align='center'>
-<th>Transaction Id</th>
-<th>Book Id</th>
-<th>UserName</th>
+<th>Id del Prestamo</th>
+<th>Id del Libro</th>
+<th>Usuario</th>
 </thead>
 <%
 for(CheckOut checkoutInstance:checkout){
@@ -59,13 +59,13 @@ for(CheckOut checkoutInstance:checkout){
 </table>
 
 <br><br>
-List of books which are past their return date
+Lista de libros que pasaron de la fecha limite
 
 <table width='100%' border='1'>
 <thead align='center'>
-<th>Transaction Id</th>
-<th>Book Id</th>
-<th>UserName</th>
+<th>Id del Prestamo</th>
+<th>Id del Libro</th>
+<th>Usuario</th>
 </thead>
 <%
 for(CheckOut checkoutInstance:past_returndate){
@@ -87,6 +87,6 @@ for(CheckOut checkoutInstance:past_returndate){
 
 </form>
 
-<center>Click <a href="index.jsp">here</a> to log out.</center>
+<center>Click <a href="index.jsp">aca</a> para salir.</center>
 </body>
 </html>
