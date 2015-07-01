@@ -7,6 +7,7 @@ package com.reddragon.libreriaweb;
 
 import com.reddragon.libreriaweb.model.Book;
 import com.reddragon.libreriaweb.model.CheckOut;
+import com.reddragon.libreriaweb.model.User;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -170,6 +171,80 @@ public class AdminSectionServlet extends HttpServlet {
                     }                    
                     
                 }
+                else if(menuSelection.equals("checkoutbook")){
+			
+
+			try {
+				Connection connection = null;
+
+				Statement statement = null;
+
+				ResultSet rs = null;
+				String host="jdbc:derby://localhost:1527/Libreria";
+                                String name="root";
+                                String pass="root";
+                                connection =DriverManager.getConnection(host, name, pass);
+
+				statement = connection.createStatement();
+				rs = statement.executeQuery("SELECT * FROM Books");
+				
+				List<Book> books = new ArrayList<Book>();
+				while(rs.next()){
+					Book book = new Book();
+					book.setBookId(rs.getInt("id"));
+					book.setBookName(rs.getString("bookName"));
+					book.setAuthorName(rs.getString("authorName"));
+					book.setISBN(rs.getString("ISBN"));
+					book.setPublisher(rs.getString("publisher"));
+					book.setTotalCopies(rs.getInt("totalcopies"));
+					book.setAvailCopies(rs.getInt("availablecopies"));
+					books.add(book);
+				}
+				
+				request.setAttribute("books", books);
+				RequestDispatcher requestDispatcher = request.getRequestDispatcher("checkOut.jsp");
+				requestDispatcher.forward(request, response);
+			}  catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}else if(menuSelection.equals("listusers")){
+			//String connectionURL = "jdbc:mysql://localhost:3306/library";
+
+			try {
+				Connection connection = null;
+
+				Statement statement = null;
+
+				ResultSet rs = null,rs2 = null;
+				String host="jdbc:derby://localhost:1527/Libreria";
+                                String name="root";
+                                String pass="root";
+                                connection =DriverManager.getConnection(host, name, pass);
+
+				statement = connection.createStatement();
+				rs = statement.executeQuery("SELECT * FROM Users");
+				
+				List<User> users = new ArrayList<User>();
+				while(rs.next()){
+					User user = new User();
+					user.setFirstName(rs.getString("firstName"));
+					user.setSurname(rs.getString("surname"));
+					user.setAge(rs.getInt("age"));
+					user.setGender(rs.getString("gender"));
+					user.setUsername(rs.getString("username"));
+					//user.setPassword(rs.getString("password"));
+					users.add(user);
+				}
+				
+				request.setAttribute("users", users);
+				RequestDispatcher requestDispatcher = request.getRequestDispatcher("listusers.jsp");
+				requestDispatcher.forward(request, response);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
              }
 
 
