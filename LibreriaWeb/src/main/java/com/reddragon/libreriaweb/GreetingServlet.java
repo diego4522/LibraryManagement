@@ -5,6 +5,7 @@
  */
 package com.reddragon.libreriaweb;
 
+import com.reddragon.libreriaweb.model.CheckOut;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -119,9 +120,9 @@ public class GreetingServlet extends HttpServlet {
 
              }else{
                      errorMsgs.add("Invalid username or password");
-                     RequestDispatcher view = request.getRequestDispatcher("index.html");
+                     RequestDispatcher view = request.getRequestDispatcher("index.jsp");
                      view.forward(request, response);
-                     //return;
+                     return;
              }
            //Send the ErrorPage view if there were errors
              if(!errorMsgs.isEmpty())  {
@@ -129,8 +130,23 @@ public class GreetingServlet extends HttpServlet {
                            view.forward(request, response);
                            return;
                    }      
-
-
+            //stmt = con.prepareStatement("select * from Checkout where username = ? order by return_date");
+            //stmt.setString(1, username);
+            //rs = stmt.executeQuery();
+            //stmt = con.createStatement();
+            sql="select * from Checkout where username =  '"+username+"' order by return_date";
+             rs = stmt.executeQuery(sql);
+            List<CheckOut> checkedOutItems = new ArrayList<CheckOut>();
+            while(rs.next()){
+                    CheckOut item = new CheckOut();
+                    item.setTransactionId(rs.getInt(1));
+                    item.setBookId(rs.getInt(2));	  
+                    item.setUserName(rs.getString(3));
+                    item.setReturnDate(rs.getDate(4));
+                    checkedOutItems.add(item);
+            }
+            request.setAttribute("checkedOutItems", checkedOutItems);
+                  
            //Send the success view
                    RequestDispatcher view = request.getRequestDispatcher("successGreeting.jsp");
                    view.forward(request, response);

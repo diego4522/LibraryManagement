@@ -4,6 +4,9 @@
     Author     : Diego
 --%>
 
+<%@page import="java.util.List"%>
+<%@page import="com.reddragon.libreriaweb.model.CheckOut"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -19,11 +22,34 @@
 <td><h3>Library Management System: Success Greeting Page</h3></td>
 </tr>
 </table>
+<%	List<CheckOut> checkout = (ArrayList<CheckOut>)request.getAttribute("checkedOutItems");
+ %>
 
 <p> You have successfully logged in!!!</p>
 
+<u>Books currently borrowed by you:</u><br/><br/>	
+<table width='100%' border='1'>
+<thead align='center'>
+<th>Transaction Id</th>
+<th>User Name</th>
+<th>Book Id</th>
+<th>Return Date</th>
+</thead>
+<%
+for(CheckOut checkedOutItem: checkout) {
+%>	
+	<tr align='center'>
+		<td><%=checkedOutItem.getTransactionId()%></td>
+		<td><%=checkedOutItem.getUserName()%></td>
+		<td><%=checkedOutItem.getBookId()%></td>
+                <td><%=checkedOutItem.getReturnDate()%></td>
+	</tr>
+<%
+}
+%>
+</table>
 <br/><br/><br/><br/>
-<center>Click <a href='index.html'>here</a> to logout</center><br/>
+<center>Click <a href='index.jsp'>here</a> to logout</center><br/>
 
 </body>
 </html>

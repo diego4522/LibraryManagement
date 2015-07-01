@@ -87,6 +87,6 @@ for(CheckOut checkoutInstance:past_returndate){
 
 </form>
 
-<center>Click <a href="index.html">here</a> to log out.</center>
+<center>Click <a href="index.jsp">here</a> to log out.</center>
 </body>
 </html>

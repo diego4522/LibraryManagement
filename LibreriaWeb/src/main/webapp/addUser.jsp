@@ -49,6 +49,6 @@ Password:<input type='password' name='password' value="<%=user.getPassword() %>"
 
 <input type='submit' value='Add User'/>
 </form>
-<center>Click <a href="index.html"> here </a>to log out.</center>
+<center>Click <a href="index.jsp"> here </a>to log out.</center>
 </body>
 </html>
